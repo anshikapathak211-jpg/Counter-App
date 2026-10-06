@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background: #0f172a;
+}
+
+/* Main App */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Blobs */
+
+.blob {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+}
+
+.blob-one {
+  background: #6366f1;
+  top: -150px;
+  left: -100px;
+}
+
+.blob-two {
+  background: #ec4899;
+  bottom: -150px;
+  right: -100px;
+}
+
+/* Card */
+
+.card {
+  width: 400px;
+  max-width: 100%;
+  padding: 35px 30px 25px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+
+  color: white;
+  position: relative;
+  z-index: 1;
+
+  animation: cardAppear 0.7s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+
+.icon {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+/* Counter Display */
+
+.display {
+  width: 190px;
+  height: 140px;
+  margin: 30px auto 12px;
+
+  border-radius: 22px;
+
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  font-size: 72px;
+  font-weight: bold;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.number.positive {
+  color: #4ade80;
+}
+
+.number.negative {
+  color: #f87171;
+}
+
+.status {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+/* Main Buttons */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: scale(0.94);
+}
+
+.main-btn {
+  width: 78px;
+  height: 55px;
+  border-radius: 15px;
+  font-size: 28px;
+}
+
+.minus {
+  background: #ef4444;
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
+.reset {
+  background: #64748b;
+  box-shadow: 0 8px 20px rgba(100, 116, 139, 0.25);
+}
+
+.plus {
+  background: #22c55e;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
+}
+
+/* Step Value */
+
+.step-title {
+  margin-top: 28px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.step-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 20px;
+}
+
+.step-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.step-input {
+  width: 75px;
+  height: 38px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+
+  text-align: center;
+  font-size: 16px;
+
+  outline: none;
+}
+
+/* Remove Number Input Arrows */
+
+.step-input::-webkit-inner-spin-button,
+.step-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  margin-top: 28px;
+  padding-top: 17px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 450px) {
+  .card {
+    padding: 28px 20px 20px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  .display {
+    width: 165px;
+    height: 120px;
+  }
+
+  .number {
+    font-size: 60px;
+  }
+
+  .main-btn {
+    width: 68px;
+  }
+}
